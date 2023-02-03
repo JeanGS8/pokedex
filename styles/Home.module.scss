@@ -1,0 +1,11 @@
+.main{
+  background-image: linear-gradient(to right bottom, lightgreen, lightblue, coral);
+
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
