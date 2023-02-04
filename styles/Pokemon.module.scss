@@ -1,5 +1,6 @@
 .container{
   background-image: linear-gradient(to right, lightgreen, lightblue, coral);
+  height: calc(100vh - 100px);
   min-height: 720px;
   max-height: 1080px;
   display: flex;
@@ -15,6 +16,7 @@
     align-items: center;
     border-radius: 10px;
     border: 1px solid black;
+    padding: 0 1em;
 
     h2{
       font-size: 2em;

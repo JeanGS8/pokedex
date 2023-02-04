@@ -12,19 +12,42 @@
   border-bottom: 2px solid black;
 
   .logo{
-    display: flex;
-    
-    h1{
-      font-size: 2em;
-    }
+    font-size: 2em;
   }
 
   .lista{
     display: flex;
 
     li{
-      font-size: 1.6em;
-      margin-left: 20px;
+      a{
+        color: white;
+        text-decoration: none;
+        font-size: 1.8em;
+        margin-left: 20px;
+        position: relative;
+        z-index: 1;
+
+        &:before{
+          content: '';
+          position: absolute;
+          
+          bottom: -3px;
+          left: 50%;
+
+          width: 0;
+          height: 3px;
+
+          border-radius: 10px;
+          background-color: lightgray;
+          z-index: -1;
+          transition: .3s;
+        }
+
+        &:hover:before{
+          left: 10%;
+          width: 80%;
+        }
+      }
     }
   }
 }
