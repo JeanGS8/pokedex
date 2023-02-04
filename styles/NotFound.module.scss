@@ -1,0 +1,41 @@
+.container{
+  height: 100vh;
+  min-height: 720px;
+  max-height: 1080px;
+  background-color: #ffff80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1{
+    font-weight: bold;
+    font-size: 4em;
+    margin-bottom: .5em;
+  }
+
+  img{
+    width: 450px;
+  }
+  
+  p{
+    font-size: 1.8em;
+    margin: .5em 0;
+  }
+  
+  a{
+    margin: .5em 0;
+    font-size: 1.8em;
+    color: #ffff80;
+    text-decoration: none;
+
+    background-color: black;
+    padding: .5em .8em;
+    border-radius: 15px;
+    transition: .3s;
+
+    &:hover{
+      background-color: #444;
+    }
+  }
+}
