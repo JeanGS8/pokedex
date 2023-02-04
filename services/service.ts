@@ -23,12 +23,12 @@ export const getPokemonById = async (id: string) => {
   return await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
   .then(response => {
     const pokemon = {
-      "id": response.data.id,
-      "name": response.data.forms[0].name,
-      "foto": response.data.sprites.other[`official-artwork`].front_default,
-      "height": response.data.height,
-      "weight": response.data.weight,
-      "types": response.data.types
+      id: response.data.id,
+      name: response.data.forms[0].name,
+      foto: response.data.sprites.other[`official-artwork`].front_default,
+      height: response.data.height,
+      weight: response.data.weight,
+      types: response.data.types
     }
 
     return pokemon;

@@ -1,4 +1,6 @@
 import { getPokemonById, getPokemons } from "@/services/service";
+import styles from "@/styles/Pokemon.module.scss";
+import Link from "next/link";
 
 type pokemons = {
   name: string,
@@ -30,7 +32,13 @@ type pokemon = {
   foto: string,
   height: number,
   weight: number,
-  types: string
+  types: {
+    slot: number,
+    type: {
+      name: string,
+      url: string
+    }
+  }[]
 }
 
 export const getStaticProps = async (context: any) => {
@@ -45,8 +53,28 @@ export const getStaticProps = async (context: any) => {
 
 export default function Pokemon({pokemon}: {pokemon: pokemon}){
   return (
-    <>
-      {pokemon.name}
-    </>
+    <div className={styles['container']}>
+      <div className={styles['card']}>
+        <h2>{pokemon.id}</h2>
+        <img src={pokemon.foto} alt={pokemon.name} />
+        <h1>{pokemon.name}</h1>
+        
+        <div className={styles['tipos']}>
+          {pokemon.types.map(item => (
+            <h3 className={styles[`tipos__${item.type.name}`]}>
+              {item.type.name}
+            </h3>
+          ))}
+        </div>
+        <h4 className={styles['medidas']}>
+          Altura: {pokemon.height * 10} cm
+          <span></span>
+          Peso: {pokemon.weight / 10} kg
+        </h4>
+        <Link href='/' className={styles['link']}>
+          Voltar
+        </Link>
+      </div>
+    </div>
   );
 }

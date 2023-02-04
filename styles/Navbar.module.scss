@@ -1,0 +1,30 @@
+.container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 25px 2.5%;
+  border-bottom: 2px solid black;
+
+  .logo{
+    display: flex;
+    
+    h1{
+      font-size: 2em;
+    }
+  }
+
+  .lista{
+    display: flex;
+
+    li{
+      font-size: 1.6em;
+      margin-left: 20px;
+    }
+  }
+}
