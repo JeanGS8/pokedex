@@ -49,8 +49,76 @@
         border: 1px solid white;
       }
 
-      &__grass{
-        background-color: green;
+      &__normal {
+        background-color: #aa9;
+      }
+      
+      &__fire {
+        background-color: #f42;
+      }
+      
+      &__water {
+        background-color: #39f;
+      }
+      
+      &__eletric {
+        background-color: #fc3;
+      }
+      
+      &__grass {
+        background-color: #7c5;
+      }
+      
+      &__ice {
+        background-color: #6cf;
+      }
+      
+      &__fighting {
+        background-color: #b54;
+      }
+      
+      &__poison {
+        background-color: #a59;
+      }
+      
+      &__ground {
+        background-color: #db5;
+      }
+      
+      &__flying {
+        background-color: #89f;
+      }
+      
+      &__psychic {
+        background-color: #f59;
+      }
+      
+      &__bug {
+        background-color: #ab2;
+      }
+      
+      &__rock {
+        background-color: #ba6;
+      }
+      
+      &__ghost {
+        background-color: #66b;
+      }
+      
+      &__dragon {
+        background-color: #76e;
+      }
+      
+      &__dark {
+        background-color: #754;
+      }
+      
+      &__steel {
+        background-color: #aab;
+      }
+      
+      &__fairy {
+        background-color: #e9e;
       }
     }
 
