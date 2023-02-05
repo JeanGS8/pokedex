@@ -41,7 +41,7 @@ type pokemon = {
   }[]
 }
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async (context: { params: { pokemonId: string } }) => {
  
   return await getPokemonById(`${context.params.pokemonId}`)
   .then(response => {
@@ -60,8 +60,8 @@ export default function Pokemon({pokemon}: {pokemon: pokemon}){
         <h1>{pokemon.name}</h1>
         
         <div className={styles['tipos']}>
-          {pokemon.types.map(item => (
-            <h3 className={styles[`tipos__${item.type.name}`]}>
+          {pokemon.types.map((item, index) => (
+            <h3 key={index} className={styles[`tipos__${item.type.name}`]}>
               {item.type.name}
             </h3>
           ))}
