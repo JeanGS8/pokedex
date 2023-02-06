@@ -8,16 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-        <title>{Component.name}</title>
       </Head>
       
-      {(Component.name != 'NotFound')?
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        :
+      <Layout>
         <Component {...pageProps} />
-      }
+      </Layout>
     </>
   );
 }

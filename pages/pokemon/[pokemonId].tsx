@@ -1,5 +1,6 @@
 import { getPokemonById, getPokemons } from "@/services/service";
 import styles from "@/styles/Pokemon.module.scss";
+import Head from "next/head";
 import Link from "next/link";
 
 type pokemons = {
@@ -53,28 +54,34 @@ export const getStaticProps = async (context: { params: { pokemonId: string } })
 
 export default function Pokemon({pokemon}: {pokemon: pokemon}){
   return (
-    <div className={styles['container']}>
-      <div className={styles['card']}>
-        <h2>{pokemon.id}</h2>
-        <img src={pokemon.foto} alt={pokemon.name} />
-        <h1>{pokemon.name}</h1>
-        
-        <div className={styles['tipos']}>
-          {pokemon.types.map((item, index) => (
-            <h3 key={index} className={styles[`tipos__${item.type.name}`]}>
-              {item.type.name}
-            </h3>
-          ))}
+    <>
+      <Head>
+        <title>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.substring(1)}</title>
+      </Head>
+
+      <div className={styles['container']}>
+        <div className={styles['card']}>
+          <h2>{pokemon.id}</h2>
+          <img src={pokemon.foto} alt={pokemon.name} />
+          <h1>{pokemon.name}</h1>
+      
+          <div className={styles['tipos']}>
+            {pokemon.types.map((item, index) => (
+              <h3 key={index} className={styles[`tipos__${item.type.name}`]}>
+                {item.type.name}
+              </h3>
+            ))}
+          </div>
+          <h4 className={styles['medidas']}>
+            Altura: {pokemon.height * 10} cm
+            <span></span>
+            Peso: {pokemon.weight / 10} kg
+          </h4>
+          <Link href='/' className={styles['link']}>
+            Voltar
+          </Link>
         </div>
-        <h4 className={styles['medidas']}>
-          Altura: {pokemon.height * 10} cm
-          <span></span>
-          Peso: {pokemon.weight / 10} kg
-        </h4>
-        <Link href='/' className={styles['link']}>
-          Voltar
-        </Link>
       </div>
-    </div>
+    </>
   );
 }
