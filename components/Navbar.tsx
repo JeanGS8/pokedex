@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Navbar(){
   return (
     <div className={styles['container']}>
-      <h1 className={styles['logo']}>Pokedex</h1>
+      <h1 className={styles['logo']}>Poke<span>dex</span></h1>
 
       <ul className={styles['lista']}>
         <li>

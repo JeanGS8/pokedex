@@ -24,3 +24,14 @@
     width: 450px;
   }
 }
+
+@media(max-width: 650px){
+  .sobre{
+    min-height: 600px;
+    max-height: 1140px;
+
+    img{
+      width: 80%;
+    }
+  }
+}

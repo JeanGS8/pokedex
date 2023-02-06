@@ -18,6 +18,7 @@
       background-color: transparent;
       outline: 0;
       border: 2px solid black;
+      padding: .3em .5em;
     }
   }
 
@@ -27,5 +28,15 @@
     max-width: 1200px;
     justify-content: center;
     margin: 0 auto;
+  }
+}
+
+@media(max-width: 650px){
+  .main{
+    label{
+      flex-direction: column;
+      gap: .5em;
+      margin: 2.5em 0;
+    }
   }
 }

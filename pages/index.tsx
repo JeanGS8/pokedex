@@ -38,8 +38,9 @@ export default function Home({pokemons}: {pokemons:pokemon[]}){
         </label>
         <div className={styles['main__container']}>
           {pokemons.map(pokemon => (
-            (pokemon.name.includes(text.toLowerCase()) || text == '') &&
+            (pokemon.name.includes(text.toLowerCase()) &&
               <Card key={pokemon.id} pokemon={pokemon} />
+            )
           ))}
         </div>
       </div>

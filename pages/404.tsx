@@ -6,7 +6,7 @@ export default function NotFound(){
   return (
     <>
       <Head>
-        <title>404</title>
+        <title>404 Not Found</title>
       </Head>
       
       <div className={styles['container']}>

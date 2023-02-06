@@ -148,3 +148,30 @@
     }
   }
 }
+
+@media(max-width: 1000px){
+  .container{
+    padding: 100px 0 2em 0;
+
+    .card{
+      width: 50%;
+
+      img{
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px){
+  .container{
+
+    .card{
+      width: 80%;
+
+      .link:hover{
+        background-color: #111;
+      }
+    }
+  }
+}
