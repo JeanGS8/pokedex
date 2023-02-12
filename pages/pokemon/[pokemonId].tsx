@@ -13,18 +13,17 @@ export const getStaticPaths = async () => {
   
   const limit = 251;
 
-  return await getPokemons(limit)
-  .then(response => {
-    const paths = response.map((pokemon: pokemons) => {
-      return{
-        params:{
-          pokemonId: pokemon.id.toString()
-        }
-      }
-    })
+  const response = await getPokemons(limit);
 
-    return {paths, fallback: false};
+  const paths = response.map((pokemon: pokemons) => {
+    return{
+      params:{
+        pokemonId: String(pokemon.id)
+      }
+    }
   })
+
+  return {paths, fallback: false};
 }
 
 type pokemon = {
@@ -44,12 +43,11 @@ type pokemon = {
 
 export const getStaticProps = async (context: { params: { pokemonId: string } }) => {
  
-  return await getPokemonById(`${context.params.pokemonId}`)
-  .then(response => {
-    return{
-      props:{pokemon: response}
-    }
-  })
+  const response = await getPokemonById(`${context.params.pokemonId}`);
+
+  return{
+    props:{pokemon: response}
+  }
 }
 
 export default function Pokemon({pokemon}: {pokemon: pokemon}){

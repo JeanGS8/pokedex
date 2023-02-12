@@ -14,12 +14,11 @@ export const getStaticProps = async () => {
 
   const limit = 251;
   
-  return await getPokemons(limit)
-  .then(response => {
-    return{
-      props: {pokemons: response}
-    }
-  })
+  const response = await getPokemons(limit);
+  
+  return{
+    props: {pokemons: response}
+  }
 }
 
 export default function Home({pokemons}: {pokemons:pokemon[]}){
